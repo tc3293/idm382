@@ -202,6 +202,15 @@ img {
     object-position: bottom;
     padding-bottom: 2rem;
   }
+
+  .img1 {
+    align-items: center;
+    width: 42rem;
+    height: 28rem;
+    object-fit: cover;
+    object-position: bottom;
+    padding-bottom: 2rem;
+  }
 .space {
     text-align: center;
 }
