@@ -47,6 +47,19 @@ a:hover {
     width: 100%;
     margin-bottom: 25px;
 }
+.tinkercad-link {
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    font-size: 22px;
+  }
+
+  .tinkercad-link:hover {
+    cursor: pointer; /* Changes cursor to pointer */
+    color: #ffffff; /* Darkens the link color on hover */
+  }
+
 
 #start {
     display: flex;
@@ -222,4 +235,33 @@ img {
     .viewp {
         font-size: 35px;
     }
+    .img1 {
+        width: 26rem;
+    height: 17rem;}
+
     }
+
+
+/* VIDEO CSS HERE */
+
+ .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between videos */
+    padding: 20px;
+  }
+
+  video {
+    width: 80%;  /* Shrinks the video size to 80% of its container */
+    max-width: 320px;  /* Ensures the video doesn't exceed 320px width */
+    height: auto;  /* Adjusts height automatically */
+  }
+
+  /* Ensure proper centering and layout on small screens */
+  @media (max-width: 768px) {
+    .video-container {
+      flex-direction: column; /* Stacks the videos vertically on mobile */
+    }
+  }
