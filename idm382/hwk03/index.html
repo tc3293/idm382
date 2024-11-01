@@ -41,6 +41,80 @@
             
         <!-- <h1></h1> -->
     </div> <hr>
+    <pre>
+    <h1>Code</h1>
+    <code>#include <ArduinoIoTCloud.h>
+        #include <Arduino_ConnectionHandler.h>
+        #include "thingProperties.h"
+        
+        // Pin definitions for HC-SR04
+        const int trigPin = 5;    // Trigger pin for the distance sensor
+        const int echoPin = 6;    // Echo pin for the distance sensor
+        
+        // Variable to store distance
+        float distance;
+        
+        // Initialize Arduino IoT Cloud with Wi-Fi
+        void setup() {
+          // Start Serial Monitor
+          Serial.begin(9600);
+           // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
+          delay(1500); 
+        
+          // Initialize IoT Cloud properties
+          initProperties();
+        
+          // Connect to Wi-Fi
+          ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+          
+          // Wait until connected to Arduino IoT Cloud
+          while (ArduinoCloud.connected() != 1) {
+            delay(500);
+          }
+        
+          Serial.println("Connected to Arduino IoT Cloud!");
+        
+          // Set up the distance sensor pins
+          pinMode(trigPin, OUTPUT);
+          pinMode(echoPin, INPUT);
+        }
+        
+        void loop() {
+          // Update the IoT Cloud
+          ArduinoCloud.update();
+        
+          // Read distance from sensor
+          distance = readDistanceSensor();
+        
+          // Print distance to Serial Monitor
+          Serial.print("Distance: ");
+          Serial.print(distance);
+          Serial.println(" cm");
+        
+          delay(1000);  // Delay to allow easier reading
+        }
+        
+        // Function to calculate distance
+        float readDistanceSensor() {
+          // Clear the trigger pin
+          digitalWrite(trigPin, LOW);
+          delayMicroseconds(2);
+        
+          // Set the trigger pin HIGH for 10 microseconds
+          digitalWrite(trigPin, HIGH);
+          delayMicroseconds(10);
+          digitalWrite(trigPin, LOW);
+        
+          // Read the duration of the echo pulse
+          long duration = pulseIn(echoPin, HIGH);
+        
+          // Calculate the distance in cm
+          float distance = duration * 0.034 / 2;
+        
+          return distance;
+        } </code> </pre>
+    
+    <hr>
     <h1>What is it? title?</h1>
     <p class="space"> Arduino IoT cloud, Offline code on the serial monitor</p>
 

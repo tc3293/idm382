@@ -269,3 +269,27 @@ img {
       padding: inherit;
     }
   }
+
+  /* ---------this is the code display in html ---------- */
+  pre code {
+    color: rgb(202, 182, 68);
+    display: block;
+    padding: 20px;
+    font-family:sans-serif;
+    font-weight: bold;
+    max-width: 36rem;
+    text-wrap: balance;
+    
+
+  }
+
+  @media only screen and (max-width: 768px) {
+    pre code {
+    font-family:sans-serif;
+    font-weight: bold;
+    max-width: 36rem;
+    text-wrap: balance;
+    text-align: left;
+    
+    }
+}
