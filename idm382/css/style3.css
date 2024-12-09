@@ -175,7 +175,7 @@ p{
     padding-right: 20px;
     margin: 1%;
     font-size: 25px;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
     line-height: 2.2rem;
 }  
 
@@ -292,4 +292,75 @@ img {
     text-align: left;
     
     }
+}
+
+/* ---------- FOOTER HERE -------------- */
+/*-----------------------Footer--------------------------*/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+span:hover {
+    transform: translate(-10px);
+    outline: none;
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #a79449;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.social-icons a:hover{
+    color:#c4be97;
+    transform: translate(-2px);
+    border-radius: 50px;
+}
+
+
+.about-col-1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 90px;
+    margin-bottom: 70px;
+}
+
+.about-col-1 p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*footericon here*/
+.ownicon {
+    position: relative;
+    height: 120px;
+}
+.tonme {
+    float: right;
+    width: 180px;
+    /* height: 200px; */
+}
+#circlelogo {
+    width: auto;
+    height: auto;
+}
+
+
+@media only screen and (max-width: 768px){
+.tonme {
+    display: none;
+}
 }
